@@ -9,13 +9,13 @@ An offline-first, comprehensive revision handbook and interactive assessment too
 - **Fully Offline:** No external accounts or libraries required.
 
 ## Project File Structure
-
+```
 cs-revision-handbook/
 ├── index.html
 ├── styles.css
 ├── script.js
 └── README.md
-
+```
 ## Getting Started
 
 1. Clone or download this repository.
