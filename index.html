@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Offline CS graduate revision handbook: plain-English explanations, code examples, technical interviews, and interactive quiz.">
+<title>CS Revision Handbook · Offline Edition</title>
+<link rel="stylesheet" href="styles.css">
+</head><body><div class="shell"><aside id="sidebar" class="sidebar"><div class="brand">Computer Science<br>Revision Handbook<small>Graduate fundamentals · October 2026</small></div><label for="toc-search" class="sr-only">Find a chapter</label><input id="toc-search" placeholder="Search chapters..." aria-label="Search chapter titles"><nav aria-label="Chapters"><a class="toc-part" href="#part-i-the-computer-science-mental-model" data-toc="part i — the computer science mental model">PART I — THE COMPUTER SCIENCE MENTAL MODEL</a><a class="toc-chapter" href="#01-what-actually-happens-when-software-runs" data-toc="01. what actually happens when software runs?">01. What actually happens when software runs?</a><a class="toc-chapter" href="#02-how-is-code-translated-into-something-that-runs" data-toc="02. how is code translated into something that runs?">02. How is code translated into something that runs?</a><a class="toc-chapter" href="#03-types-memory-and-the-fundamentals-of-data" data-toc="03. types, memory, and the fundamentals of data">03. Types, memory, and the fundamentals of data</a><a class="toc-chapter" href="#04-programming-logic-conditions-loops-functions-scope" data-toc="04. programming logic: conditions, loops, functions, scope">04. Programming logic: conditions, loops, functions, scope</a><a class="toc-chapter" href="#05-error-handling-modules-and-good-coding-habits" data-toc="05. error handling, modules and good coding habits">05. Error handling, modules and good coding habits</a><a class="toc-part" href="#part-ii-how-software-is-structured" data-toc="part ii — how software is structured">PART II — HOW SOFTWARE IS STRUCTURED</a><a class="toc-chapter" href="#06-object-oriented-programming-oop" data-toc="06. object-oriented programming (oop)">06. Object-oriented programming (OOP)</a><a class="toc-chapter" href="#07-data-structures-choosing-how-to-store-information" data-toc="07. data structures: choosing how to store information">07. Data structures: choosing how to store information</a><a class="toc-chapter" href="#08-algorithms-and-big-o-notation" data-toc="08. algorithms and big o notation">08. Algorithms and Big O notation</a><a class="toc-chapter" href="#09-more-algorithms-you-should-recognise" data-toc="09. more algorithms you should recognise">09. More algorithms you should recognise</a><a class="toc-part" href="#part-iii-databases-and-data" data-toc="part iii — databases and data">PART III — DATABASES AND DATA</a><a class="toc-chapter" href="#10-relational-databases-and-sql-from-zero" data-toc="10. relational databases and sql from zero">10. Relational databases and SQL from zero</a><a class="toc-chapter" href="#11-database-design-indexes-transactions" data-toc="11. database design, indexes, transactions">11. Database design, indexes, transactions</a><a class="toc-chapter" href="#12-nosql-json-caching-and-data-formats" data-toc="12. nosql, json, caching and data formats">12. NoSQL, JSON, caching and data formats</a><a class="toc-part" href="#part-iv-web-development-networks-and-apis" data-toc="part iv — web development, networks and apis">PART IV — WEB DEVELOPMENT, NETWORKS AND APIs</a><a class="toc-chapter" href="#13-how-the-internet-and-web-actually-work" data-toc="13. how the internet and web actually work">13. How the internet and web actually work</a><a class="toc-chapter" href="#14-http-and-rest-apis" data-toc="14. http and rest apis">14. HTTP and REST APIs</a><a class="toc-chapter" href="#15-html-css-responsive-design-and-accessibility" data-toc="15. html, css, responsive design and accessibility">15. HTML, CSS, responsive design and accessibility</a><a class="toc-chapter" href="#16-javascript-and-typescript-fundamentals" data-toc="16. javascript and typescript fundamentals">16. JavaScript and TypeScript fundamentals</a><a class="toc-chapter" href="#17-frontend-frameworks-and-component-thinking" data-toc="17. frontend frameworks and component thinking">17. Frontend frameworks and component thinking</a><a class="toc-chapter" href="#18-backend-services-and-an-end-to-end-application" data-toc="18. backend services and an end-to-end application">18. Backend services and an end-to-end application</a><a class="toc-part" href="#part-v-systems-security-delivery" data-toc="part v — systems, security, delivery">PART V — SYSTEMS, SECURITY, DELIVERY</a><a class="toc-chapter" href="#19-operating-systems-processes-and-the-terminal" data-toc="19. operating systems, processes and the terminal">19. Operating systems, processes and the terminal</a><a class="toc-chapter" href="#20-security-and-privacy-fundamentals" data-toc="20. security and privacy fundamentals">20. Security and privacy fundamentals</a><a class="toc-chapter" href="#21-git-github-and-teamwork" data-toc="21. git, github and teamwork">21. Git, GitHub and teamwork</a><a class="toc-chapter" href="#22-testing-debugging-and-code-quality" data-toc="22. testing, debugging and code quality">22. Testing, debugging and code quality</a><a class="toc-chapter" href="#23-sdlc-agile-and-engineering-workflow" data-toc="23. sdlc, agile and engineering workflow">23. SDLC, Agile and engineering workflow</a><a class="toc-chapter" href="#24-cloud-containers-and-deployment" data-toc="24. cloud, containers and deployment">24. Cloud, containers and deployment</a><a class="toc-chapter" href="#25-architecture-and-entry-level-system-design" data-toc="25. architecture and entry-level system design">25. Architecture and entry-level system design</a><a class="toc-part" href="#part-vi-extra-cs-topics-job-interview-skills" data-toc="part vi — extra cs topics &amp; job interview skills">PART VI — EXTRA CS TOPICS &amp; JOB INTERVIEW SKILLS</a><a class="toc-chapter" href="#26-mathematics-and-technical-foundations" data-toc="26. mathematics and technical foundations">26. Mathematics and technical foundations</a><a class="toc-chapter" href="#27-ai-machine-learning-and-computer-vision-interview-overview" data-toc="27. ai, machine learning and computer vision (interview overview)">27. AI, machine learning and computer vision (interview overview)</a><a class="toc-chapter" href="#28-the-35-short-interview-questions-you-must-be-able-to-answer" data-toc="28. the 35 short interview questions you must be able to answer">28. The 35 short interview questions you must be able to answer</a><a class="toc-chapter" href="#29-how-to-tackle-a-live-coding-interview" data-toc="29. how to tackle a live coding interview">29. How to tackle a live coding interview</a><a class="toc-chapter" href="#30-behavioural-interviews-cv-claims-and-a-portfolio-project" data-toc="30. behavioural interviews, cv claims, and a portfolio project">30. Behavioural interviews, CV claims, and a portfolio project</a><a class="toc-part" href="#part-vii-assess-yourself-do-this-without-reading-the-answers" data-toc="part vii — assess yourself (do this without reading the answers)">PART VII — ASSESS YOURSELF (DO THIS WITHOUT READING THE ANSWERS)</a><a class="toc-chapter" href="#31-final-assessment-40-multiple-choice-questions" data-toc="31. final assessment: 40 multiple-choice questions">31. Final assessment: 40 multiple-choice questions</a><a class="toc-chapter" href="#32-code-reading-predict-the-output-before-running" data-toc="32. code reading: predict the output before running">32. Code reading: predict the output BEFORE running</a><a class="toc-chapter" href="#33-practical-challenges-write-actual-code" data-toc="33. practical challenges (write actual code)">33. Practical challenges (write actual code)</a><a class="toc-chapter" href="#34-behavioural-mock-interview" data-toc="34. behavioural mock interview">34. Behavioural mock interview</a><a class="toc-chapter" href="#35-multiple-choice-answer-key-and-explanations" data-toc="35. multiple-choice answer key and explanations">35. Multiple-choice answer key and explanations</a><a class="toc-chapter" href="#36-code-reading-solutions" data-toc="36. code-reading solutions">36. Code-reading solutions</a><a class="toc-chapter" href="#37-worked-solutions-to-practical-challenges" data-toc="37. worked solutions to practical challenges">37. Worked solutions to practical challenges</a><a class="toc-chapter" href="#38-mark-yourself-fairly" data-toc="38. mark yourself fairly">38. Mark yourself fairly</a><a class="toc-part" href="#reference-official-resources-to-deepen-any-topic" data-toc="reference — official resources to deepen any topic">REFERENCE — official resources to deepen any topic</a></nav><div class="side-bottom">Works offline. Marks and quiz answers are saved locally when your browser allows it. No account needed.</div></aside><div class="main"><div class="topbar"><button class="action menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">☰ Chapters</button><span class="status">0/30 chapters marked complete</span><div class="actions"><button class="action" id="theme-toggle">Light theme</button></div></div><main class="content"><h1 id="computer-science-software-engineering-the-graduate-revision-handbook">Computer Science &amp; Software Engineering — The Graduate Revision Handbook</h1>
+<p><strong>Edition:</strong> October 2026<br/>
+<strong>Audience:</strong> A computer science graduate refreshing fundamentals for junior software engineer, web developer, full-stack, QA, technical support, and graduate technical interviews.<br/>
+<strong>How to use it:</strong> Read a chapter, run its code, explain the idea aloud without looking, then attempt the end-of-book assessment. <strong>Understanding beats memorising definitions.</strong></p>
+<blockquote>
+<p><strong>Scope:</strong> Computer science is far too large to master from one guide. This handbook deliberately covers the <em>core concepts you should recognise, explain and apply at entry level</em>, plus the most common extensions. Specialised roles require additional depth. You do <strong>not</strong> need perfect recall to apply for graduate jobs.</p>
+</blockquote>
+<h2 id="your-study-map">Your study map</h2>
+<p><strong>Priority A — explain confidently:</strong> how computers work; variables, loops, functions; OOP; arrays/maps/sets; Big O; SQL; HTML/CSS/JS; HTTP/API; Git; testing; security basics.<br/>
+<strong>Priority B — implement in a small project:</strong> async code; frameworks; backend; auth; indexes; Docker; CI/CD; Linux; debugging.<br/>
+<strong>Priority C — know at interview level:</strong> algorithms, operating systems, networking, system design, architecture, concurrency, cloud and AI fundamentals.</p>
+<p><strong>Suggested schedule:</strong> On each study day, revise 2–3 chapters and write code for at least 45 minutes. Use the chapter drills and do the final assessment <em>closed-book</em>. Revisit missed concepts after 1, 3 and 7 days. A thorough pass may take several weeks; use this as a permanent reference rather than a promise of instant mastery.</p>
+<hr/>
+<h1 id="part-i-the-computer-science-mental-model">PART I — THE COMPUTER SCIENCE MENTAL MODEL</h1>
+<h2 id="01-what-actually-happens-when-software-runs">01. What actually happens when software runs?</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="01" type="button">Mark complete</button>
+<p><strong>Hardware</strong> is the physical machine. <strong>Software</strong> is instructions and data. The <strong>operating system (OS)</strong> manages processes, memory, storage and devices. An <strong>application</strong> runs on top of the OS and asks it for services.</p>
+<ul>
+<li><strong>CPU:</strong> executes instructions. A CPU has multiple cores; each core can execute work, while the OS schedules many tasks across them.</li>
+<li><strong>RAM:</strong> fast, working storage for programs and their data. Usually volatile: its contents disappear when power is removed.</li>
+<li><strong>SSD/HDD:</strong> persistent files, including code, apps and databases. Slower than RAM, but stores data after restart.</li>
+<li><strong>GPU:</strong> specialised parallel computation useful for graphics and AI workloads, not simply “a better CPU.”</li>
+<li><strong>Input / output:</strong> keyboard, network, display, disk. A program may spend much of its time waiting for I/O.</li>
+<li><strong>Binary:</strong> computers represent data with bits (<code>0</code> or <code>1</code>). Eight bits make one byte. Text is encoded into bytes (often UTF-8); an image and a sound file are also encoded data.</li>
+</ul>
+<p><strong>Example:</strong> You open a photo-editing app. Its executable is read from storage into memory, the CPU executes instructions, the GPU helps render the image, and saving writes modified data back to persistent storage.</p>
+<p><strong>Terms worth knowing:</strong> <em>program</em> = instructions on disk; <em>process</em> = running program with resources and address space; <em>thread</em> = a path of execution within a process; <em>file</em> = a named unit of stored bytes; <em>filesystem</em> = organisation of files/directories.</p>
+<p><strong>Interview:</strong> “RAM vs storage?” → RAM stores active working data, while persistent storage keeps data across restarts; RAM is generally faster and smaller.</p>
+<p><strong>Try it:</strong> Explain what happens between double-clicking an application and seeing its first window. Mention CPU, memory, OS and storage.</p>
+<h2 id="02-how-is-code-translated-into-something-that-runs">02. How is code translated into something that runs?</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="02" type="button">Mark complete</button>
+<p>A <strong>programming language</strong> expresses instructions. A <strong>compiler</strong> typically translates source code into lower-level code ahead of execution (for example, C to machine code). An <strong>interpreter/runtime</strong> executes code through its execution environment. Many real languages use hybrid approaches: Python compiles source to bytecode for a virtual machine; Java typically compiles to JVM bytecode with runtime JIT compilation; JavaScript engines parse and optimise code and often JIT-compile it.</p>
+<ul>
+<li><strong>Syntax error:</strong> code breaks the grammar, such as a missing <code>:</code> in Python.</li>
+<li><strong>Runtime error:</strong> code is syntactically valid but fails while running, such as division by zero.</li>
+<li><strong>Logic bug:</strong> code runs but produces an incorrect answer.</li>
+<li><strong>Library:</strong> reusable code called from your program; <strong>framework:</strong> a larger structure that calls your code at defined points.</li>
+<li><strong>SDK:</strong> tools/libraries/docs for building a particular type of app; <strong>API:</strong> contract through which software communicates.</li>
+<li><strong>IDE vs editor:</strong> an IDE includes tools such as debuggers and project support; VS Code is primarily an extensible code editor.</li>
+</ul>
+<p><strong>Example (Python):</strong></p>
+<pre><code class="language-python">price = 20
+quantity = 3
+print(price * quantity)  # 60; prints the evaluated expression
+</code></pre>
+<p><strong>Interview:</strong> “Compiler vs interpreter?” → They are approaches to translating and executing programs; modern language runtimes often use both techniques.</p>
+<h2 id="03-types-memory-and-the-fundamentals-of-data">03. Types, memory, and the fundamentals of data</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="03" type="button">Mark complete</button>
+<p><strong>Variable</strong> = a name referring to a value. <strong>Type</strong> describes what operations a value supports. Common types: integer <code>42</code>, float <code>3.14</code>, Boolean <code>True</code>, string <code>"hello"</code>, null/None (no value), collections, and objects.</p>
+<p><strong>Static typing</strong> checks many type rules before running (e.g., Java, TypeScript); <strong>dynamic typing</strong> checks types as code runs (e.g., Python, JavaScript). These are not the same thing as strong/weak typing. TypeScript's checks are erased when compiling to JavaScript, so validate external inputs at runtime.</p>
+<p><strong>Mutable</strong> objects can change after creation (Python <code>list</code>, <code>dict</code>); <strong>immutable</strong> objects cannot be mutated (Python <code>int</code>, <code>str</code>, <code>tuple</code>). A <code>const</code> variable in JavaScript cannot be reassigned, but an object referenced by <code>const</code> can still be mutated.</p>
+<p><strong>Stack and heap:</strong> a useful mental model is that short-lived function call frames often live on a call stack, while dynamically allocated objects may live on a heap. Exact storage details vary by language and runtime; don't assume every language stores every primitive on a stack.</p>
+<p><strong>Value vs reference:</strong> two names may refer to the same mutable object:</p>
+<pre><code class="language-python">first = [1, 2]
+second = first
+second.append(3)
+print(first)    # [1, 2, 3] — both refer to one list
+copy = first.copy()
+copy.append(4)
+print(first)    # [1, 2, 3] — shallow list copy is separate
+</code></pre>
+<p><strong>Interview:</strong> “<code>==</code> versus <code>is</code> in Python?” → <code>==</code> tests value equality; <code>is</code> tests identity. For checking None, use <code>value is None</code>.</p>
+<h2 id="04-programming-logic-conditions-loops-functions-scope">04. Programming logic: conditions, loops, functions, scope</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="04" type="button">Mark complete</button>
+<p><strong>Conditionals</strong> choose branches; <strong>loops</strong> repeat work; <strong>functions</strong> package reusable logic and return results. <strong>Scope</strong> determines where a name can be accessed. <strong>Parameters</strong> are names in a function signature; <strong>arguments</strong> are the actual values passed.</p>
+<pre><code class="language-python">def shipping_cost(total: float, is_member: bool) -&gt; float:
+    if is_member or total &gt;= 50:
+        return 0.0
+    return 4.99
+
+cart_totals = [19.0, 60.0, 8.0]
+for total in cart_totals:
+    print(shipping_cost(total, is_member=False))
+# 4.99, 0.0, 4.99
+</code></pre>
+<ul>
+<li><strong><code>if / elif / else</code></strong> branch on a condition.</li>
+<li><strong><code>for</code></strong> iterates over items; <strong><code>while</code></strong> repeats while a condition holds.</li>
+<li><strong><code>break</code></strong> exits a loop; <strong><code>continue</code></strong> skips to the next iteration.</li>
+<li><strong>Return</strong> sends a result and exits a function; printing only displays text.</li>
+<li><strong>Pure function:</strong> output depends only on its inputs and it has no observable side effects. Easier to test.</li>
+<li><strong>Recursion:</strong> a function calls itself with a smaller input and a <strong>base case</strong> to stop.</li>
+</ul>
+<p><strong>Example recursion:</strong></p>
+<pre><code class="language-python">def factorial(n):
+    if n &lt; 0:
+        raise ValueError('n must be nonnegative')
+    if n &lt;= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(4))  # 24
+</code></pre>
+<p><strong>Interview:</strong> “Why use functions?” → Readability, reuse, separation of responsibilities, testing and maintainability. A good function has a clear purpose and interface.</p>
+<h2 id="05-error-handling-modules-and-good-coding-habits">05. Error handling, modules and good coding habits</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="05" type="button">Mark complete</button>
+<p>Your code must expect failures: missing files, unavailable servers, malformed input and programming bugs. An <strong>exception</strong> signals an error; handle exceptions narrowly rather than silently swallowing everything.</p>
+<pre><code class="language-python">def parse_age(text):
+    try:
+        age = int(text)
+    except ValueError:
+        return None
+    return age if age &gt;= 0 else None
+
+print(parse_age('25'))      # 25
+print(parse_age('unknown')) # None
+</code></pre>
+<p><strong>Module:</strong> reusable source file that can be imported. <strong>Package:</strong> group of modules. <strong>Dependency:</strong> external code your project needs. <strong>Virtual environment:</strong> isolated Python environment for dependencies. <strong>Lockfile:</strong> records resolved dependency versions for reproducible installs. Never hardcode secrets in source code; use environment variables or secrets management.</p>
+<p><strong>Readable code:</strong> descriptive names, small functions, explicit input checks, meaningful errors, consistent formatting, and comments explaining <em>why</em> rather than repeating <em>what</em>. <strong>DRY</strong> = avoid duplicated business logic; <strong>KISS</strong> = avoid needless complexity; <strong>YAGNI</strong> = don't build unused features.</p>
+<p><strong>Try it:</strong> Write <code>average(numbers)</code> returning <code>None</code> for an empty list, and write tests for both ordinary and empty input.</p>
+<hr/>
+<h1 id="part-ii-how-software-is-structured">PART II — HOW SOFTWARE IS STRUCTURED</h1>
+<h2 id="06-object-oriented-programming-oop">06. Object-oriented programming (OOP)</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="06" type="button">Mark complete</button>
+<p>A <strong>class</strong> defines a blueprint; an <strong>object</strong> is an instance with <strong>state</strong> (attributes) and <strong>behaviour</strong> (methods). OOP is one tool for organising larger applications; it is not required for every task.</p>
+<pre><code class="language-python">class BankAccount:
+    def __init__(self, owner: str, balance: float = 0):
+        self.owner = owner
+        self._balance = balance
+
+    def deposit(self, amount: float):
+        if amount &lt;= 0:
+            raise ValueError('Amount must be positive')
+        self._balance += amount
+
+    @property
+    def balance(self):
+        return self._balance
+
+account = BankAccount('Sam', 100)
+account.deposit(25)
+print(account.balance)  # 125
+</code></pre>
+<p>The <strong>four classic OOP principles</strong>:</p>
+<ol>
+<li><strong>Encapsulation:</strong> keep related state and behaviour together; expose a safe interface. <code>_balance</code> in Python is a convention, not truly private access control.</li>
+<li><strong>Abstraction:</strong> hide implementation details behind a useful interface. A <code>.deposit()</code> method hides how the balance is stored.</li>
+<li><strong>Inheritance:</strong> a class extends/reuses behaviour from another; e.g. <code>ElectricCar(Car)</code>. Avoid complex hierarchies when composition is simpler.</li>
+<li><strong>Polymorphism:</strong> different types respond to the same operation, e.g. <code>Dog.speak()</code> and <code>Cat.speak()</code>.</li>
+</ol>
+<p><strong>Composition vs inheritance:</strong> a <code>Car</code> <em>has an</em> <code>Engine</code> (composition); a <code>Car</code> <em>is a</em> <code>Vehicle</code> (possible inheritance). Prefer composition when a simple relationship is sufficient.</p>
+<p><strong>Interface vs abstract class:</strong> an interface specifies a contract; abstract classes can also share state or implementation. Details depend on language. <strong>Dependency injection</strong> passes collaborators into a component rather than creating them internally, making testing easier.</p>
+<p><strong>SOLID in plain English:</strong></p>
+<ul>
+<li><strong>S — Single Responsibility:</strong> a class or module has one cohesive reason to change.</li>
+<li><strong>O — Open/Closed:</strong> allow new behaviour with limited changes to stable code, often through extension.</li>
+<li><strong>L — Liskov Substitution:</strong> a subtype should honour the contract expected of its base type.</li>
+<li><strong>I — Interface Segregation:</strong> don't force clients to depend on operations they don't need.</li>
+<li><strong>D — Dependency Inversion:</strong> depend on stable abstractions rather than concrete implementations.</li>
+</ul>
+<p><strong>Interview:</strong> “Explain abstraction and encapsulation.” → Abstraction hides complexity behind a simple contract; encapsulation protects/manages state and behaviour inside a boundary.</p>
+<h2 id="07-data-structures-choosing-how-to-store-information">07. Data structures: choosing how to store information</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="07" type="button">Mark complete</button>
+<p>A <strong>data structure</strong> organises values for particular operations. The <em>choice</em> matters because searching, inserting and deleting have different costs.</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Mental model</th>
+<th>Typical operation cost</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array/list</td>
+<td>Ordered sequence</td>
+<td>Index O(1); search O(n); append amortised O(1) for dynamic arrays</td>
+<td>Shopping cart</td>
+</tr>
+<tr>
+<td>Linked list</td>
+<td>Nodes connected by references</td>
+<td>Index/search O(n); insert/delete O(1) <strong>given the node</strong></td>
+<td>Undo-chain concept</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Last in, first out (LIFO)</td>
+<td>Push/pop O(1)</td>
+<td>Undo, call stack</td>
+</tr>
+<tr>
+<td>Queue</td>
+<td>First in, first out (FIFO)</td>
+<td>Enqueue/dequeue O(1) with appropriate structure</td>
+<td>Print jobs</td>
+</tr>
+<tr>
+<td>Hash map/dictionary</td>
+<td>Key → value</td>
+<td>Expected lookup/insert O(1), worst case may differ</td>
+<td>User ID → user</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>Collection of distinct values</td>
+<td>Expected membership O(1)</td>
+<td>Unique usernames</td>
+</tr>
+<tr>
+<td>Tree</td>
+<td>Parent/child hierarchy</td>
+<td>Depends on type and balance</td>
+<td>Folder tree</td>
+</tr>
+<tr>
+<td>Heap/priority queue</td>
+<td>Fast access to min/max priority</td>
+<td>Peek O(1), insert/remove O(log n)</td>
+<td>Scheduling</td>
+</tr>
+<tr>
+<td>Graph</td>
+<td>Nodes and connecting edges</td>
+<td>Traversal O(V+E)</td>
+<td>Social links, routes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important nuance:</strong> Python's <code>list</code> is a dynamic array, not a linked list. For efficient queues use <code>collections.deque</code>; for a min-heap use <code>heapq</code>.</p>
+<pre><code class="language-python">from collections import deque
+from heapq import heappush, heappop
+
+seen = {'Ada', 'Sam'}         # set
+prices = {'apple': 2.5}      # dictionary / hash map
+jobs = deque(['first'])
+jobs.append('second')
+print(jobs.popleft())         # first — FIFO
+
+heap = []
+heappush(heap, (1, 'urgent'))
+heappush(heap, (5, 'normal'))
+print(heappop(heap))          # (1, 'urgent')
+</code></pre>
+<p><strong>Interview:</strong> “When do you use a set instead of a list?” → When you care about uniqueness or fast expected membership tests rather than preserving duplicates or indexed access.</p>
+<h2 id="08-algorithms-and-big-o-notation">08. Algorithms and Big O notation</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="08" type="button">Mark complete</button>
+<p>An <strong>algorithm</strong> is a clear method for solving a problem. <strong>Time complexity</strong> describes how running time grows with input size; <strong>space complexity</strong> describes additional memory required. <strong>Big O</strong> commonly expresses an asymptotic upper bound, often discussed in worst-case terms. It is not a wall-clock time prediction.</p>
+<table>
+<thead>
+<tr>
+<th>Complexity</th>
+<th>Growth intuition</th>
+<th>Typical example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O(1)</td>
+<td>Roughly constant</td>
+<td>Array indexing</td>
+</tr>
+<tr>
+<td>O(log n)</td>
+<td>Repeatedly halve</td>
+<td>Binary search in sorted array</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>Scan once</td>
+<td>Find max in unsorted list</td>
+</tr>
+<tr>
+<td>O(n log n)</td>
+<td>Efficient comparison sorting</td>
+<td>Merge sort</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>Nested scan</td>
+<td>Compare all pairs</td>
+</tr>
+<tr>
+<td>O(2ⁿ)</td>
+<td>Rapid exponential growth</td>
+<td>Naive exhaustive subset enumeration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Linear search vs binary search:</strong></p>
+<pre><code class="language-python">def linear_search(items, target):
+    for i, value in enumerate(items):
+        if value == target:
+            return i
+    return -1                 # O(n)
+
+
+def binary_search(sorted_items, target):
+    left, right = 0, len(sorted_items) - 1
+    while left &lt;= right:
+        mid = (left + right) // 2
+        if sorted_items[mid] == target:
+            return mid
+        if sorted_items[mid] &lt; target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1                 # O(log n); input MUST be sorted
+</code></pre>
+<p><strong>Sort algorithms:</strong> bubble sort O(n²) average/worst; merge sort O(n log n) worst with O(n) auxiliary memory; quicksort O(n log n) average, O(n²) worst with poor pivots. Built-in sort is usually preferable in production.</p>
+<p><strong>Common problem-solving patterns:</strong></p>
+<ul>
+<li><strong>Two pointers:</strong> check opposite ends of a sorted array or palindrome.</li>
+<li><strong>Sliding window:</strong> rolling maximum/count over contiguous ranges.</li>
+<li><strong>Hashing:</strong> count occurrences or find complements (two-sum).</li>
+<li><strong>BFS:</strong> explore graph layer by layer with a queue; shortest path in an <em>unweighted</em> graph.</li>
+<li><strong>DFS:</strong> explore deeply with recursion or stack; traversals and cycle detection.</li>
+<li><strong>Binary search:</strong> repeatedly narrow an ordered space, not just arrays.</li>
+<li><strong>Dynamic programming:</strong> store answers to overlapping subproblems, as in Fibonacci or coin change.</li>
+<li><strong>Greedy:</strong> pick the best apparent local option when a proof makes it safe; not all problems permit this.</li>
+<li><strong>Backtracking:</strong> explore choices, undo choices, and prune invalid paths.</li>
+</ul>
+<p><strong>Two-sum example (O(n) expected time, O(n) extra space):</strong></p>
+<pre><code class="language-python">def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        needed = target - num
+        if needed in seen:
+            return [seen[needed], i]
+        seen[num] = i
+    return []
+
+print(two_sum([2, 7, 11, 15], 9))  # [0, 1]
+</code></pre>
+<p><strong>Interview:</strong> Speak through brute force first, estimate complexity, improve it, then test edge cases. An answer that works and is clearly explained is usually better than silent clever code.</p>
+<h2 id="09-more-algorithms-you-should-recognise">09. More algorithms you should recognise</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="09" type="button">Mark complete</button>
+<p><strong>Binary trees:</strong> each node has at most two children. <strong>Binary search trees (BSTs)</strong> keep smaller keys to the left and larger to the right; balanced trees commonly support O(log n) search, but a skewed BST can degrade to O(n). <strong>Traversals:</strong> preorder (node/left/right), inorder (left/node/right), postorder (left/right/node). Inorder of a BST gives sorted keys.</p>
+<p><strong>Graph representation:</strong> adjacency list <code>{'A': ['B','C']}</code> is compact for sparse graphs; adjacency matrix is a square table of potential edges. <strong>Dijkstra's algorithm</strong> finds shortest paths when edge weights are nonnegative. <strong>Topological sort</strong> orders dependencies in a directed acyclic graph (DAG); think build steps or prerequisite courses.</p>
+<p><strong>Hash collisions:</strong> two keys can map to the same bucket; hash tables need a collision-handling strategy. Typical average O(1) performance depends on healthy hashing and load factor.</p>
+<p><strong>Recursion vs iteration:</strong> recursion can simplify tree code, but deep recursion may exhaust call stack space. Iteration with explicit stack/queue avoids that limit for some tasks.</p>
+<p><strong>Example BFS:</strong></p>
+<pre><code class="language-python">from collections import deque
+
+def bfs(graph, start):
+    visited = {start}
+    queue = deque([start])
+    order = []
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for neighbour in graph.get(node, []):
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+    return order
+
+print(bfs({'A': ['B','C'], 'B': ['D'], 'C': [], 'D': []}, 'A'))
+# ['A', 'B', 'C', 'D']
+</code></pre>
+<p><strong>Practice:</strong> Explain how you would detect duplicate email addresses in a million records, and compare a nested-loop O(n²) method with a hash-set O(n) expected method.</p>
+<hr/>
+<h1 id="part-iii-databases-and-data">PART III — DATABASES AND DATA</h1>
+<h2 id="10-relational-databases-and-sql-from-zero">10. Relational databases and SQL from zero</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="10" type="button">Mark complete</button>
+<p>A <strong>database</strong> stores and retrieves organised data; a <strong>DBMS</strong> (PostgreSQL, MySQL, SQLite, etc.) manages it. A <strong>relational database</strong> stores rows in tables and connects tables using keys.</p>
+<ul>
+<li><strong>Table:</strong> entity collection, e.g. <code>users</code>. <strong>Row:</strong> one record. <strong>Column:</strong> one attribute.</li>
+<li><strong>Primary key (PK):</strong> unique identifier, typically non-null.</li>
+<li><strong>Foreign key (FK):</strong> refers to a key in another table; enforces referential integrity where constraints are enabled.</li>
+<li><strong>Schema:</strong> structure, types, constraints and relationships.</li>
+<li><strong><code>NULL</code>:</strong> missing/unknown value, not zero or empty string. Use <code>IS NULL</code>, not <code>= NULL</code>.</li>
+</ul>
+<p><strong>Example schema:</strong></p>
+<pre><code class="language-sql">CREATE TABLE customers (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY,
+    customer_id INTEGER NOT NULL REFERENCES customers(id),
+    total DECIMAL(10,2) NOT NULL CHECK (total &gt;= 0)
+);
+</code></pre>
+<p><strong>CRUD:</strong> Create (<code>INSERT</code>), Read (<code>SELECT</code>), Update (<code>UPDATE</code>), Delete (<code>DELETE</code>). A <code>WHERE</code> clause limits rows; forgetting it in <code>UPDATE</code> or <code>DELETE</code> can affect every row.</p>
+<pre><code class="language-sql">INSERT INTO customers (id, name, email)
+VALUES (1, 'Ada', 'ada@example.com');
+
+SELECT id, name FROM customers WHERE name LIKE 'A%';
+UPDATE customers SET name = 'Ada Lovelace' WHERE id = 1;
+DELETE FROM customers WHERE id = 1;
+</code></pre>
+<p><strong>Example table <code>orders</code>:</strong> <code>[(10, 1, 75), (11, 1, 25), (12, 2, 30)]</code> where values are <code>(id, customer_id, total)</code>.</p>
+<pre><code class="language-sql">SELECT customer_id, COUNT(*) AS order_count, SUM(total) AS spent
+FROM orders
+WHERE total &gt; 0
+GROUP BY customer_id
+HAVING SUM(total) &gt;= 50
+ORDER BY spent DESC;
+</code></pre>
+<p>SQL's conceptual stages are approximately <code>FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT</code>, although DB optimisers may execute differently. <code>WHERE</code> filters source rows; <code>HAVING</code> filters aggregated groups. <code>DISTINCT</code> removes duplicate result rows. <code>LIMIT</code>/<code>OFFSET</code> page results (syntax varies by database).</p>
+<p><strong>Joins:</strong></p>
+<pre><code class="language-sql">SELECT c.name, o.id, o.total
+FROM customers AS c
+INNER JOIN orders AS o ON c.id = o.customer_id;
+</code></pre>
+<ul>
+<li><strong>INNER JOIN:</strong> only matching rows on both sides.</li>
+<li><strong>LEFT JOIN:</strong> all left rows, and matching right rows (otherwise NULLs).</li>
+<li><strong>RIGHT JOIN:</strong> reverse of left (not supported in all systems).</li>
+<li><strong>FULL OUTER JOIN:</strong> rows from both sides whether matched or not (not all systems).</li>
+<li><strong>CROSS JOIN:</strong> all combinations; can be huge.</li>
+</ul>
+<p><strong>Interview:</strong> “<code>WHERE</code> vs <code>HAVING</code>?” → <code>WHERE</code> acts before aggregation; <code>HAVING</code> filters grouped/aggregated results.</p>
+<h2 id="11-database-design-indexes-transactions">11. Database design, indexes, transactions</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="11" type="button">Mark complete</button>
+<p><strong>Normalisation</strong> reduces unnecessary duplication and update anomalies. <strong>1NF:</strong> atomic field values. <strong>2NF:</strong> attributes depend on the full candidate key, not part of a composite key. <strong>3NF:</strong> non-key attributes do not depend transitively on a key through another non-key attribute. In practice, separating customers and orders avoids repeating customer emails on every order.</p>
+<p><strong>Index:</strong> a data structure (often B-tree) accelerating lookup and sorting for suitable queries, at a cost of storage and slower writes. Indexing <code>orders(customer_id)</code> can improve retrieving a customer's orders; indexes are not automatically helpful for every query. Use <code>EXPLAIN</code>/query plans and realistic data.</p>
+<p><strong>Transactions</strong> group operations atomically. Transfer example:</p>
+<pre><code class="language-sql">BEGIN;
+UPDATE accounts SET balance = balance - 50 WHERE id = 1;
+UPDATE accounts SET balance = balance + 50 WHERE id = 2;
+COMMIT;
+-- On an error, ROLLBACK; also validate balances / affected rows.
+</code></pre>
+<p><strong>ACID:</strong> <strong>Atomicity</strong> all-or-nothing; <strong>Consistency</strong> rules preserved; <strong>Isolation</strong> simultaneous transactions behave according to the chosen isolation level; <strong>Durability</strong> committed data survives failures as promised by the DBMS. Isolation levels trade performance and anomalies. Transactions alone do not replace constraints or good application logic.</p>
+<p><strong>N+1 query problem:</strong> fetching 100 orders then querying their customer once each makes 101 DB queries. A JOIN or batch fetch can reduce the round trips.</p>
+<p><strong>Migrations:</strong> version-controlled changes to schema. <strong>Backups:</strong> recover lost data; a replica does <em>not</em> automatically replace backups. <strong>Optimistic locking:</strong> detect concurrent edits with version numbers; <strong>pessimistic locking:</strong> lock selected resources.</p>
+<p><strong>Interview:</strong> “How do you make a slow query faster?” → Reproduce with real data, inspect its query plan, identify excessive scans/joins, evaluate indexes and query shape, benchmark, then review tradeoffs.</p>
+<h2 id="12-nosql-json-caching-and-data-formats">12. NoSQL, JSON, caching and data formats</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="12" type="button">Mark complete</button>
+<p><strong>NoSQL</strong> includes document, key–value, wide-column and graph databases. It does <em>not</em> mean “has no query language.” <strong>MongoDB</strong> is a document database where a record can resemble JSON. <strong>Redis</strong> is commonly a fast in-memory data store/cache. <strong>SQL</strong> refers to a language for relational queries, not MongoDB's default query API.</p>
+<pre><code class="language-javascript">// MongoDB shell example
+// Find active users at least 18 years old:
+db.users.find({ active: true, age: { $gte: 18 } })
+</code></pre>
+<p><strong>SQL vs document databases:</strong> relational databases shine when relationships, joins and multi-row constraints matter. Document databases fit some flexible, document-centric access patterns. Neither is automatically faster: choose based on queries, consistency requirements, operations and data model.</p>
+<p><strong>JSON</strong> is a text format for exchange; keys and string values use double quotes; supported values include object, array, number, string, boolean and <code>null</code>. A JSON document isn't the same as a JavaScript object in memory.</p>
+<pre><code class="language-json">{"id": 7, "skills": ["Python", "SQL"], "available": true}
+</code></pre>
+<p><strong>Cache:</strong> temporarily store data that is expensive to compute/fetch. Example: cache a product list for 60 seconds. Tradeoff: stale content and invalidation challenges. <strong>Cache-aside:</strong> read cache, and on a miss fetch database then write cache. <strong>TTL:</strong> time-to-live before expiry.</p>
+<p><strong>Interview:</strong> “Would you use SQL or MongoDB?” → Start with data relationships, required transactions, query patterns, scale, operational experience and team needs; explain a tradeoff instead of declaring a universal winner.</p>
+<hr/>
+<h1 id="part-iv-web-development-networks-and-apis">PART IV — WEB DEVELOPMENT, NETWORKS AND APIs</h1>
+<h2 id="13-how-the-internet-and-web-actually-work">13. How the internet and web actually work</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="13" type="button">Mark complete</button>
+<p><strong>Internet:</strong> interconnected networks that move packets using standard protocols. <strong>Web:</strong> one application system built on top of it, using browsers, URLs and HTTP/HTTPS.</p>
+<p><strong>When you type <code>https://example.com/products</code>:</strong></p>
+<ol>
+<li>The browser parses the URL and may look in caches.</li>
+<li><strong>DNS</strong> finds the service address (often an IP address), possibly through multiple lookup steps.</li>
+<li>The client establishes a connection (TCP + TLS for common HTTPS setups; HTTP/3 uses QUIC over UDP instead).</li>
+<li>The browser sends an <strong>HTTP request</strong> to the server/CDN.</li>
+<li>Server software reads data or talks to services/databases, returning an HTTP response.</li>
+<li>Browser parses HTML into a DOM, CSS into styling rules, executes JavaScript, and renders pixels; further asset/API requests may follow.</li>
+</ol>
+<p><strong>IP address:</strong> network-layer address. <strong>Port:</strong> identifies a service endpoint at a host. <strong>DNS:</strong> hostname resolution. <strong>TCP:</strong> reliable ordered byte stream. <strong>UDP:</strong> datagrams without TCP's reliability guarantee. <strong>TLS:</strong> encrypted authenticated connection. <strong>HTTPS:</strong> HTTP protected using TLS (or equivalent HTTP/3 transport integration).</p>
+<p><strong>Client/server:</strong> browser or mobile app is the client; server accepts requests. <strong>Frontend:</strong> interface in browser. <strong>Backend:</strong> server-side logic. <strong>Database:</strong> persistent store. <strong>CDN:</strong> distributed caches close to users. <strong>Reverse proxy:</strong> accepts inbound traffic and forwards it to application servers. <strong>Load balancer:</strong> distributes requests across instances.</p>
+<p><strong>Interview:</strong> “What happens when you enter a URL?” → DNS, connection/TLS, HTTP request, backend response, browser parsing/rendering and additional requests. Name caching and asynchronous loading if appropriate.</p>
+<h2 id="14-http-and-rest-apis">14. HTTP and REST APIs</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="14" type="button">Mark complete</button>
+<p><strong>Request:</strong> method + URL + headers + optional body. <strong>Response:</strong> status + headers + optional body.</p>
+<pre><code class="language-http">GET /api/products/7 HTTP/1.1
+Host: example.com
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"id":7,"name":"Laptop","price":899}
+</code></pre>
+<p><strong>Common methods:</strong> <code>GET</code> retrieve; <code>POST</code> submit/create/action; <code>PUT</code> replace a resource; <code>PATCH</code> partially modify; <code>DELETE</code> remove. <code>GET</code> and <code>PUT</code> are <strong>idempotent</strong> by HTTP semantics: repeating the same request has the same intended effect on server state (not necessarily identical response); <code>POST</code> is not guaranteed idempotent.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td>Read succeeded</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td>New resource</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content</td>
+<td>Successful delete</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Invalid request</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized (authentication needed/invalid)</td>
+<td>Not logged in</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Authenticated but not allowed</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Unknown path/id</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflict</td>
+<td>Duplicate or conflicting state</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>Rate limited</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>Backend fault</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td>Temporarily down</td>
+</tr>
+</tbody>
+</table>
+<p><strong>REST</strong> is an architectural style that models resources, uses a uniform HTTP interface and keeps requests stateless in the relevant sense; many real-world “REST APIs” implement a subset. <strong>GraphQL:</strong> client specifies desired data shape, usually through a schema and queries. <strong>WebSocket:</strong> persistent bidirectional communication suitable for chat/live status. <strong>Polling:</strong> repeated requests at intervals. <strong>Webhook:</strong> one service calls your endpoint when an event happens.</p>
+<p><strong>Pagination:</strong> avoid sending a million records in one response. Offset paging is easy but can shift when rows change; cursor/keyset paging is often better for large, changing collections. <strong>API versioning:</strong> manage incompatible interface changes. <strong>Rate limiting:</strong> protect service capacity/abuse. <strong>CORS:</strong> a browser-enforced mechanism controlling access to cross-origin responses; it is not authentication and does not stop server-to-server traffic.</p>
+<p><strong>Interview:</strong> “401 vs 403?” → 401 usually means missing/invalid credentials; 403 means the request is understood but the user is not permitted.</p>
+<h2 id="15-html-css-responsive-design-and-accessibility">15. HTML, CSS, responsive design and accessibility</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="15" type="button">Mark complete</button>
+<p><strong>HTML</strong> describes content and meaning; <strong>CSS</strong> controls presentation; <strong>JavaScript</strong> provides behaviour.</p>
+<pre><code class="language-html">&lt;main&gt;
+  &lt;h1&gt;Contact us&lt;/h1&gt;
+  &lt;form action="/contact" method="post"&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input id="email" name="email" type="email" required&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/main&gt;
+</code></pre>
+<p><strong>Semantic HTML:</strong> prefer <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;button&gt;</code> over arbitrary <code>&lt;div&gt;</code> elements for every role. Proper labels connect inputs to their purposes. <code>alt</code> text describes meaningful images; decorative images may have empty <code>alt</code>. Keyboard navigation, sufficient contrast and focus indicators are important for accessibility.</p>
+<p><strong>CSS box model:</strong> content + padding + border + margin. <code>box-sizing: border-box</code> includes content, padding and border in the specified width. <strong>Specificity</strong> resolves conflicting selectors; <strong>cascade</strong> also considers origin, layers and source order. <strong>Flexbox</strong> = one-dimensional layout; <strong>Grid</strong> = two-dimensional layout. <strong>Media queries</strong> adapt layouts to screen sizes.</p>
+<pre><code class="language-css">* { box-sizing: border-box; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 700px) {
+  .cards { grid-template-columns: 1fr; }
+}
+</code></pre>
+<p><strong>Responsive</strong> means layouts adapt well to device/viewports; <strong>accessible</strong> means interfaces can be used by people with varied abilities and tools. An attractive website can still be inaccessible.</p>
+<p><strong>Interview:</strong> “<code>id</code> vs <code>class</code>?” → <code>id</code> identifies a unique element in a document; <code>class</code> groups any number of elements for styling and JS selection.</p>
+<h2 id="16-javascript-and-typescript-fundamentals">16. JavaScript and TypeScript fundamentals</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="16" type="button">Mark complete</button>
+<p>JavaScript runs in browsers and server environments such as Node.js. It is dynamically typed, has first-class functions, closures, prototypes and an event loop.</p>
+<pre><code class="language-javascript">const price = 10;    // cannot reassign the binding
+let quantity = 3;    // can reassign
+const cart = [1, 2];
+cart.push(3);        // allowed: const doesn't freeze the array
+
+const square = (n) =&gt; n * n;
+const doubled = cart.map((n) =&gt; n * 2);  // [2, 4, 6]
+const even = cart.filter((n) =&gt; n % 2 === 0); // [2]
+</code></pre>
+<p><strong><code>===</code></strong> checks strict equality without type coercion in most ordinary cases; prefer it to loose <code>==</code> unless coercion is deliberate. <strong><code>null</code></strong> represents intentional absence; <strong><code>undefined</code></strong> often means a value has not been supplied. <strong><code>map</code></strong> transforms elements; <strong><code>filter</code></strong> selects; <strong><code>reduce</code></strong> combines. <strong>Destructuring</strong>, spread syntax and template literals are common syntax.</p>
+<p><strong>Closure:</strong> an inner function retains access to bindings from its enclosing scope:</p>
+<pre><code class="language-javascript">function makeCounter() {
+  let count = 0;
+  return () =&gt; ++count;
+}
+const next = makeCounter();
+console.log(next(), next()); // 1, 2
+</code></pre>
+<p><strong>Asynchronous programming:</strong> a Promise represents eventual completion/failure. <code>async/await</code> lets you write promise-based code in a readable style. It doesn't mean the whole JavaScript program pauses while waiting. Network I/O runs asynchronously and completed callbacks are scheduled through the runtime's event loop.</p>
+<pre><code class="language-javascript">async function getUser(id) {
+  const response = await fetch(`/api/users/${id}`);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return await response.json();
+}
+</code></pre>
+<p><code>fetch</code> does <strong>not</strong> reject its Promise merely because the server returned HTTP 404/500; check <code>response.ok</code>. <code>Promise.all</code> waits for multiple promises, rejecting if any reject; <code>Promise.allSettled</code> reports each outcome.</p>
+<p><strong>TypeScript</strong> adds static type checking and useful tooling to JavaScript. It compiles to JavaScript and does not validate untrusted JSON by itself:</p>
+<pre><code class="language-typescript">type User = { id: number; name: string };
+function greet(user: User): string {
+  return `Hello ${user.name}`;
+}
+</code></pre>
+<p><strong>Interview:</strong> “<code>let</code> vs <code>const</code> vs <code>var</code>?” → <code>let</code> is reassignable and block-scoped; <code>const</code> is block-scoped and prevents rebinding; <code>var</code> is function-scoped with hoisting behaviour. Prefer <code>const</code> by default, <code>let</code> when reassignment is needed.</p>
+<h2 id="17-frontend-frameworks-and-component-thinking">17. Frontend frameworks and component thinking</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="17" type="button">Mark complete</button>
+<p>A framework/library like <strong>React</strong> helps break the UI into reusable <strong>components</strong> and update the interface when <strong>state</strong> changes. The DOM is the browser's in-memory representation of document nodes; React renders a virtual representation and reconciles updates to the DOM.</p>
+<pre><code class="language-jsx">import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return &lt;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;Count: {count}&lt;/button&gt;;
+}
+</code></pre>
+<ul>
+<li><strong>Props:</strong> read-only inputs passed from parent to component.</li>
+<li><strong>State:</strong> data that may change and trigger rendering.</li>
+<li><strong>Event handler:</strong> code run after an interaction.</li>
+<li><strong>Effect:</strong> synchronise with external systems, not simply a place for all business logic.</li>
+<li><strong>Controlled form:</strong> input value is driven by application state.</li>
+<li><strong>SPA:</strong> client changes displayed views without fetching an entirely new HTML document for every navigation.</li>
+<li><strong>SSR:</strong> server produces initial HTML; <strong>hydration</strong> connects client JavaScript to interactive UI.</li>
+</ul>
+<p><strong>State location:</strong> Keep state close to components that need it; lift state up when siblings share it; use global state only when appropriate. <strong>Keys:</strong> stable IDs help correctly track items in lists; array indices can be unsafe for reorderable lists.</p>
+<p><strong>Interview:</strong> “What causes a React rerender?” → State/prop/context-related updates and parent rendering can cause component functions to rerun; React then decides what DOM changes are needed.</p>
+<h2 id="18-backend-services-and-an-end-to-end-application">18. Backend services and an end-to-end application</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="18" type="button">Mark complete</button>
+<p>A <strong>backend</strong> validates requests, checks identity/permissions, runs business rules, reads/writes data and returns responses. A good backend does not trust browser input merely because an HTML form validated it.</p>
+<p><strong>Example simplified FastAPI service (Python):</strong></p>
+<pre><code class="language-python">from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+
+app = FastAPI()
+products = {1: {"id": 1, "name": "Bottle", "price": 12.0}}
+
+class ProductIn(BaseModel):
+    name: str
+    price: float = Field(ge=0)
+
+@app.get('/products/{product_id}')
+def get_product(product_id: int):
+    product = products.get(product_id)
+    if product is None:
+        raise HTTPException(status_code=404, detail='Not found')
+    return product
+
+@app.post('/products', status_code=201)
+def add_product(product: ProductIn):
+    new_id = max(products, default=0) + 1
+    saved = {"id": new_id, **product.model_dump()}
+    products[new_id] = saved
+    return saved
+</code></pre>
+<p>This is <strong>for learning only</strong>: in-memory data disappears on restart and isn't safe for concurrent production writes. A production version would use a database, authentication and authorization as needed, error handling and observability. Run via an appropriate ASGI server such as <code>uvicorn main:app --reload</code> after installing dependencies.</p>
+<p><strong>Layered architecture:</strong> route/controller receives request → service applies business rules → repository/data access reads/writes database → result is serialised to response. The goal is separation of responsibilities, not “more folders.”</p>
+<p><strong>Interview:</strong> “Frontend vs backend?” → Frontend owns the user interaction and display; backend performs trusted business/data operations. Both validate for different reasons: UX vs security/integrity.</p>
+<hr/>
+<h1 id="part-v-systems-security-delivery">PART V — SYSTEMS, SECURITY, DELIVERY</h1>
+<h2 id="19-operating-systems-processes-and-the-terminal">19. Operating systems, processes and the terminal</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="19" type="button">Mark complete</button>
+<p>A <strong>process</strong> has its own virtual address space and resources. <strong>Threads</strong> in one process share much of the process memory. <strong>Concurrency</strong> is managing multiple tasks in overlapping periods; <strong>parallelism</strong> is literally executing tasks at the same time on different processing resources. <strong>Context switching</strong> saves/restores execution state. A <strong>race condition</strong> depends on uncontrolled timing between operations.</p>
+<p><strong>CPU-bound vs I/O-bound:</strong> CPU-bound work spends time computing, such as video encoding; I/O-bound work waits on network or disk. Async I/O shines for high-concurrency waiting, while CPU-heavy jobs may benefit from multiprocessing, native parallelism or worker queues.</p>
+<p><strong>Deadlock:</strong> two or more tasks wait indefinitely on resources held by each other. Avoid with consistent lock ordering, timeouts and minimal critical sections. <strong>Mutex:</strong> allows one thread/task into a critical section. <strong>Semaphore:</strong> permits a limited number of concurrent entrants.</p>
+<p><strong>Unix/macOS terminal essentials:</strong></p>
+<pre><code class="language-bash">pwd                     # current directory
+ls -la                  # list including hidden files
+cd ~/Documents           # change directory
+mkdir demo               # create directory
+cp source.txt copy.txt   # copy a file
+mv copy.txt newname.txt  # rename/move
+cat newname.txt          # print file contents
+grep -n "error" app.log   # find matching lines
+ps aux                  # list processes
+kill 12345              # send termination signal to a PID
+python3 -m venv .venv   # create Python virtual env
+source .venv/bin/activate
+</code></pre>
+<p><strong>Paths:</strong> absolute <code>/Users/sam/project</code> vs relative <code>./project</code>. <strong>Environment variables:</strong> configuration passed into processes (e.g. <code>PORT</code>), but shell history and logs can expose secrets if handled carelessly. <strong>Permissions:</strong> read/write/execute and ownership; <strong>least privilege</strong> means grant only required access. Never run unfamiliar <code>curl ... | bash</code> commands without verifying them.</p>
+<p><strong>Interview:</strong> “Process vs thread?” → Separate processes are generally more isolated and have separate address spaces; threads in a process share memory and need careful synchronisation.</p>
+<h2 id="20-security-and-privacy-fundamentals">20. Security and privacy fundamentals</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="20" type="button">Mark complete</button>
+<p><strong>CIA triad:</strong> confidentiality (only authorised readers), integrity (data isn't improperly altered), availability (service remains accessible). <strong>Authentication</strong> asks <em>who are you?</em>; <strong>authorization</strong> asks <em>are you allowed to do this?</em>. Always enforce authorization on the server for each resource/action.</p>
+<p><strong>Password security:</strong> never store plaintext passwords; use a slow password-hashing algorithm designed for passwords such as Argon2id or bcrypt, with unique salts and appropriate configuration. <strong>Hashing</strong> is one-way; <strong>encryption</strong> is reversible using keys. <strong>TLS</strong> protects data in transit. Rotate/secure secrets, keep dependencies patched, use MFA where suitable.</p>
+<p><strong>SQL injection</strong> happens when untrusted input changes a query's syntax. Use parameterised queries, never concatenate input into SQL commands:</p>
+<pre><code class="language-python"># GOOD: placeholder / parameters; syntax varies by DB driver
+cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
+
+# BAD: input becomes executable SQL syntax
+# cursor.execute("SELECT * FROM users WHERE email = '" + email + "'")
+</code></pre>
+<p><strong>XSS:</strong> attacker-provided content executes as script in another user's browser; escape/encode according to output context, use safe templating APIs and Content Security Policy as defence in depth. <strong>CSRF:</strong> tricks a browser into sending an unwanted authenticated action; mitigate with SameSite cookies, CSRF tokens and suitable checks. <strong>Broken access control/IDOR:</strong> changing <code>/orders/42</code> to <code>/orders/43</code> must not reveal another user's order. <strong>SSRF:</strong> backend is tricked into contacting unwanted destinations. <strong>Security misconfiguration:</strong> exposed admin panels, default passwords, verbose errors.</p>
+<p><strong>Cookies vs localStorage:</strong> cookies can be <code>HttpOnly</code>, <code>Secure</code> and <code>SameSite</code>; localStorage is readable by page JavaScript, so tokens stored there may be exposed by XSS. Neither storage approach fixes poor authorization. <strong>Session:</strong> a server-managed login state referenced by cookie/session ID. <strong>JWT:</strong> signed token format with claims; signature verification and expiry validation matter, and a JWT is not automatically encrypted or safer.</p>
+<p><strong>2025 OWASP Top 10 reminder:</strong> Broken Access Control, Security Misconfiguration, Software Supply Chain Failures, Cryptographic Failures, Injection, Insecure Design, Authentication Failures, Software or Data Integrity Failures, Security Logging &amp; Alerting Failures, and Mishandling of Exceptional Conditions. Names and rankings evolve; use the official current OWASP list.</p>
+<p><strong>Interview:</strong> “How do you protect an API?” → HTTPS, authentication, object-level authorization, input validation, parameterised queries, rate limiting, secure secret handling, logging, dependency updates, testing and monitoring.</p>
+<h2 id="21-git-github-and-teamwork">21. Git, GitHub and teamwork</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="21" type="button">Mark complete</button>
+<p><strong>Git:</strong> distributed version-control system on your machine. <strong>GitHub/GitLab:</strong> hosting/collaboration platforms using Git. <strong>Commit:</strong> snapshot of changes with a message. <strong>Branch:</strong> independent line of development. <strong>Merge:</strong> integrate history. <strong>Pull request (PR):</strong> request review before merging; not a native Git command.</p>
+<pre><code class="language-bash">git clone https://example.com/team/project.git
+git status
+git switch -c feature/search
+git add .
+git commit -m "Add product search"
+git push -u origin feature/search
+# after review, merge the PR using team workflow
+</code></pre>
+<p><strong><code>git fetch</code></strong> updates remote-tracking references without merging; <strong><code>git pull</code></strong> fetches and integrates into your current branch (merge or rebase depending on settings). <strong><code>git merge</code></strong> combines histories, potentially creating a merge commit; <strong><code>git rebase</code></strong> replays commits on a new base and rewrites commit identities. Avoid rebasing shared public commits without team agreement.</p>
+<p><strong>Merge conflict:</strong> Git cannot automatically reconcile overlapping edits; inspect conflict markers, decide final code, run tests, stage and complete merge/rebase. <strong><code>.gitignore</code></strong> helps avoid tracking generated files, virtual environments and secrets, but doesn't erase secrets already committed. Rotate leaked keys.</p>
+<p><strong>Interview:</strong> “A teammate's code breaks your branch—what do you do?” → Reproduce, check diff and failing tests, communicate respectfully, isolate root cause, fix/revert safely, add regression test and follow review process.</p>
+<h2 id="22-testing-debugging-and-code-quality">22. Testing, debugging and code quality</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="22" type="button">Mark complete</button>
+<p><strong>Unit tests:</strong> small pieces in isolation. <strong>Integration tests:</strong> multiple components working together, e.g. API plus DB. <strong>End-to-end (E2E):</strong> whole user flow. <strong>Regression test:</strong> catches a bug that was previously fixed. <strong>Smoke test:</strong> quick check key functionality works.</p>
+<pre><code class="language-python"># app.py
+def discount(price, percent):
+    if price &lt; 0 or not 0 &lt;= percent &lt;= 100:
+        raise ValueError('Invalid input')
+    return round(price * (1 - percent / 100), 2)
+
+# test_app.py (pytest)
+import pytest
+from app import discount
+
+def test_discount():
+    assert discount(100, 20) == 80
+
+def test_bad_price():
+    with pytest.raises(ValueError):
+        discount(-1, 10)
+</code></pre>
+<p><strong>Test design:</strong> normal case, boundary (0, empty list, last element), invalid input, permissions, failures, concurrency. <strong>Test doubles:</strong> mocks/stubs replace dependencies when appropriate. <strong>Test pyramid:</strong> many fast unit tests, fewer integration/E2E tests as a rough guide; exact balance varies. <strong>Coverage:</strong> measures code executed, not correctness. <strong>TDD:</strong> red failing test → green minimal implementation → refactor.</p>
+<p><strong>Debugging routine:</strong> 1) reproduce, 2) reduce to smallest failing case, 3) inspect logs/traceback, 4) form a hypothesis, 5) inspect state with breakpoints, 6) fix cause not symptom, 7) regression-test. Logs should help diagnose errors <strong>without</strong> exposing secrets or private information.</p>
+<p><strong>Static analysis</strong> checks source without running it; <strong>linter</strong> flags suspicious patterns/style; <strong>formatter</strong> applies consistent layout; <strong>type checker</strong> catches type inconsistencies; <strong>code review</strong> surfaces defects and helps knowledge sharing.</p>
+<p><strong>Interview:</strong> “Unit vs integration vs E2E?” → Unit verifies small logic, integration verifies interfaces between real components, E2E checks a complete workflow.</p>
+<h2 id="23-sdlc-agile-and-engineering-workflow">23. SDLC, Agile and engineering workflow</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="23" type="button">Mark complete</button>
+<p><strong>Software Development Life Cycle (SDLC):</strong> requirements → design → implementation → testing → deployment → operations/maintenance; in practice the loop repeats continuously.</p>
+<ul>
+<li><strong>Requirement:</strong> what must the product do? Functional (“user can reset password”) vs non-functional (“page loads within SLO”).</li>
+<li><strong>User story:</strong> “As a user, I want X so I can Y.” Add acceptance criteria for a testable definition of done.</li>
+<li><strong>Agile:</strong> respond to feedback in increments; <strong>Scrum</strong> uses roles, timeboxed sprints and events; <strong>Kanban</strong> visualises work and limits work in progress. Not every team uses Scrum.</li>
+<li><strong>Ticket/issue:</strong> bounded item describing requested work, priority and acceptance criteria.</li>
+<li><strong>Code review:</strong> teammate checks changes before merging.</li>
+<li><strong>Technical debt:</strong> future cost caused by shortcuts or choices; some is intentional and managed.</li>
+<li><strong>Refactoring:</strong> change code structure without intentionally changing external behaviour.</li>
+<li><strong>Documentation:</strong> README, setup steps, API docs, architecture decisions and runbooks.</li>
+</ul>
+<p><strong>Example ticket:</strong> “Users can reset forgotten passwords. Done when an email with expiring one-time link can be requested; link is single-use; rate limiting exists; tests cover expired/invalid token.”</p>
+<p><strong>Interview:</strong> “What would you do if requirements are unclear?” → Ask about the user outcome, acceptance criteria, constraints and edge cases; propose a small testable version and confirm with stakeholder.</p>
+<h2 id="24-cloud-containers-and-deployment">24. Cloud, containers and deployment</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="24" type="button">Mark complete</button>
+<p><strong>Cloud computing:</strong> rent compute/storage/services rather than owning hardware. <strong>IaaS:</strong> virtual machines and networks; <strong>PaaS:</strong> managed application runtime; <strong>SaaS:</strong> fully managed application. <strong>Region:</strong> geographic area for services; <strong>availability zone:</strong> physically separated infrastructure within a region (definitions vary by provider).</p>
+<p><strong>VM vs container:</strong> VM virtualises a full guest OS on a hypervisor; container packages an application and dependencies while sharing the host kernel through OS-level isolation. <strong>Docker image:</strong> immutable package template; <strong>container:</strong> running instance. Container orchestration systems such as Kubernetes manage deployment/scaling/networking across hosts.</p>
+<pre><code class="language-dockerfile">FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "main.py"]
+</code></pre>
+<p>For production, consider pinning dependencies and image digests, running as non-root, scanning images and excluding secrets from build contexts. <strong>CI (Continuous Integration):</strong> automatically run tests/checks on changes. <strong>CD:</strong> Continuous Delivery (ready to deploy) or Continuous Deployment (automatic production deployment), depending on team.</p>
+<p><strong>Simple pipeline:</strong> push Git branch → build → lint/type check → unit/integration tests → security scan → package → deploy staging → validate → production. <strong>Blue-green/canary deployment</strong> reduce release risk. <strong>Rollback</strong> returns to a prior working version.</p>
+<p><strong>Monitoring:</strong> metrics (numbers over time), logs (events) and traces (request flow across services). <strong>Latency:</strong> time to complete a request. <strong>Throughput:</strong> requests per second. <strong>Availability:</strong> proportion of time service is usable. <strong>SLA:</strong> external service agreement; <strong>SLO:</strong> internal measurable reliability target; <strong>SLI:</strong> measured indicator.</p>
+<p><strong>Interview:</strong> “Your service crashes after deployment?” → Stop impact/roll back where appropriate, read health metrics/logs, compare release changes, reproduce, fix, test and document the incident.</p>
+<h2 id="25-architecture-and-entry-level-system-design">25. Architecture and entry-level system design</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="25" type="button">Mark complete</button>
+<p><strong>Monolith:</strong> app is packaged/deployed as a unit; often excellent for a small team. <strong>Microservices:</strong> independently deployable services with explicit network boundaries; can scale teams/domains but add distributed systems complexity. <strong>Three-tier model:</strong> presentation, application/business logic and data. <strong>Queue:</strong> decouple slow jobs from a request (e.g., send email or process uploaded video asynchronously).</p>
+<p><strong>Design a simple URL shortener:</strong></p>
+<ol>
+<li>Requirements: create short code, redirect to full URL, reject unsafe URLs, track clicks if desired.</li>
+<li>API: <code>POST /links {url}</code> → <code>{code}</code>; <code>GET /{code}</code> → redirect.</li>
+<li>Data: table <code>links(code PRIMARY KEY, url, created_at)</code>; unique index on <code>code</code>.</li>
+<li>Flow: client → API → DB; optionally cache popular code-to-URL mappings.</li>
+<li>Reliability/security: collision handling, validation, rate limiting, safe redirects, monitoring.</li>
+<li>Scaling: load balancer + multiple stateless API instances; DB capacity/caching if real traffic justifies it.</li>
+</ol>
+<p><strong>Scale up (vertical):</strong> bigger machine. <strong>Scale out (horizontal):</strong> more instances. <strong>Replication:</strong> multiple copies, often for availability/reads; <strong>sharding:</strong> distribute distinct data across nodes. <strong>Eventual consistency:</strong> replicas may disagree temporarily before converging. <strong>CAP theorem:</strong> in a partitioned distributed system you must trade some availability against strong consistency for particular operations; it does <em>not</em> simply label databases as always “CP” or “AP” in all modes.</p>
+<p><strong>Reliability patterns:</strong> retries with exponential backoff/jitter for transient failures; timeouts; circuit breakers; idempotency keys for safe repeated payment-like operations. Avoid blindly retrying non-idempotent side effects.</p>
+<p><strong>Interview:</strong> For system design, start with users/requirements, data model, API, happy-path flow, bottlenecks, safety and tradeoffs—not a giant architecture diagram immediately.</p>
+<hr/>
+<h1 id="part-vi-extra-cs-topics-job-interview-skills">PART VI — EXTRA CS TOPICS &amp; JOB INTERVIEW SKILLS</h1>
+<h2 id="26-mathematics-and-technical-foundations">26. Mathematics and technical foundations</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="26" type="button">Mark complete</button>
+<ul>
+<li><strong>Boolean logic:</strong> <code>AND</code> is true only when both inputs true; <code>OR</code> when at least one; <code>NOT</code> flips. Used in conditions, filters and circuits.</li>
+<li><strong>Base systems:</strong> binary <code>1010₂</code> = 10 decimal; hexadecimal <code>0xFF</code> = 255 decimal. Useful for flags, debugging and networking.</li>
+<li><strong>Probability:</strong> likelihood between 0 and 1; critical for testing, ML and reasoning about reliability.</li>
+<li><strong>Statistics:</strong> mean (average), median (middle), distribution, variance (spread), outliers. Mean can mislead with skewed latency data; p95 latency describes the threshold at/below which about 95% of samples fall.</li>
+<li><strong>Discrete maths:</strong> sets, relations, graphs, counting, proof by induction. Useful for algorithms.</li>
+<li><strong>Linear algebra:</strong> vectors/matrices used in graphics, computer vision, machine learning.</li>
+<li><strong>Floating point:</strong> many decimal fractions cannot be represented exactly in binary; <code>0.1 + 0.2</code> often is not exactly <code>0.3</code>. Use decimal types for money when appropriate and design currency rounding rules.</li>
+</ul>
+<pre><code class="language-python">print(0.1 + 0.2 == 0.3)  # False on typical Python floats
+from decimal import Decimal
+print(Decimal('0.1') + Decimal('0.2') == Decimal('0.3'))  # True
+</code></pre>
+<h2 id="27-ai-machine-learning-and-computer-vision-interview-overview">27. AI, machine learning and computer vision (interview overview)</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="27" type="button">Mark complete</button>
+<p><strong>Artificial intelligence:</strong> broad effort to make systems carry out tasks associated with intelligent behaviour. <strong>Machine learning:</strong> learn patterns from data rather than manually coding all decisions. <strong>Deep learning:</strong> neural-network methods with many layers. <strong>Generative AI:</strong> models that produce new content. <strong>LLMs:</strong> language models trained to predict/generate sequences of tokens using learnt patterns; they can be useful and still produce errors.</p>
+<p><strong>Supervised learning:</strong> train with labels (spam/not spam). <strong>Unsupervised:</strong> find structure without those labels (customer clustering). <strong>Reinforcement learning:</strong> learn from actions and reward signals. <strong>Training set</strong> fits parameters; <strong>validation set</strong> guides model selection; <strong>test set</strong> estimates final generalisation. <strong>Data leakage:</strong> information from evaluation improperly reaches training, inflating results.</p>
+<p><strong>Overfitting:</strong> memorises training patterns, performs poorly on unseen data. <strong>Underfitting:</strong> model too simple or undertrained. <strong>Classification:</strong> predict class; <strong>regression:</strong> predict numeric value. <strong>Precision:</strong> TP/(TP+FP); <strong>recall:</strong> TP/(TP+FN); <strong>F1:</strong> harmonic mean of precision and recall. <strong>Confusion matrix:</strong> counts predictions vs true labels. Accuracy alone can mislead on imbalanced data.</p>
+<p><strong>Computer vision:</strong> extract information from images/video. A pose estimation model predicts body landmarks; a rule-based layer might compute knee angles and flag movement conditions. Pose tracking can fail due to occlusion, camera angle, lighting and model bias. Transparent feedback should state uncertainty and limitations, not imply medical certainty.</p>
+<p><strong>AI-assisted development:</strong> use models to brainstorm/tests/explain code, but verify output, protect secrets and private data, inspect licences, and understand what you submit. Interviewers may ask you to explain code you used AI to create.</p>
+<h2 id="28-the-35-short-interview-questions-you-must-be-able-to-answer">28. The 35 short interview questions you must be able to answer</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="28" type="button">Mark complete</button>
+<p>Say each response out loud without reading. Keep a one-sentence answer ready, then expand with an example:</p>
+<ol>
+<li><strong>What is a variable?</strong> A named reference/binding to a value used by a program.</li>
+<li><strong>Array vs list vs set?</strong> Array-like lists are ordered, indexable, duplicates allowed; sets are unique-value collections optimised for membership.</li>
+<li><strong>Class vs object?</strong> Blueprint/type definition vs its instance.</li>
+<li><strong>Four OOP pillars?</strong> Encapsulation, abstraction, inheritance, polymorphism.</li>
+<li><strong>Interface vs implementation?</strong> Contract offered vs internal way of fulfilling it.</li>
+<li><strong>What is Big O?</strong> A bound on growth of resource use with input size.</li>
+<li><strong>O(n) vs O(log n)?</strong> Linear scan vs repeated halving of a sorted search space.</li>
+<li><strong>Stack vs queue?</strong> LIFO vs FIFO.</li>
+<li><strong>Hash table?</strong> Uses a hash of a key for expected efficient lookup.</li>
+<li><strong>SQL primary vs foreign key?</strong> Row identity vs reference to related row.</li>
+<li><strong>INNER vs LEFT JOIN?</strong> Only matching rows vs all left rows with matches where available.</li>
+<li><strong>WHERE vs HAVING?</strong> Filter rows vs aggregated groups.</li>
+<li><strong>Index?</strong> Lookup structure speeding suitable queries with write/storage overhead.</li>
+<li><strong>ACID?</strong> Atomicity, Consistency, Isolation, Durability.</li>
+<li><strong>SQL vs NoSQL?</strong> Relational/query model vs several nonrelational data models; evaluate use case.</li>
+<li><strong>GET vs POST?</strong> Read resource vs submit/create/trigger action, by convention and semantics.</li>
+<li><strong>401 vs 403?</strong> Authentication required/invalid vs authenticated request not permitted.</li>
+<li><strong>REST API?</strong> Resource-based stateless interfaces following HTTP conventions.</li>
+<li><strong>What is DNS?</strong> Resolves hostnames to addresses/other records.</li>
+<li><strong>HTTP vs HTTPS?</strong> HTTPS secures HTTP communication with TLS.</li>
+<li><strong>HTML vs CSS vs JS?</strong> Structure vs presentation vs interactive behaviour.</li>
+<li><strong>Flexbox vs Grid?</strong> One dimension vs two dimensions.</li>
+<li><strong><code>let</code> vs <code>const</code>?</strong> Reassignable vs fixed binding, both block-scoped.</li>
+<li><strong>Async/await?</strong> Syntactic way to consume promises/await asynchronous completion.</li>
+<li><strong>React state vs props?</strong> Mutable component-managed data vs inputs from parent.</li>
+<li><strong>Frontend vs backend?</strong> Client interface vs trusted server-side operations.</li>
+<li><strong>Authentication vs authorization?</strong> Identity verification vs access permission.</li>
+<li><strong>SQL injection?</strong> Untrusted input alters query syntax; prevent with parameters.</li>
+<li><strong>Git vs GitHub?</strong> Version-control tool vs hosting/collaboration product.</li>
+<li><strong>Merge vs rebase?</strong> Combine histories vs replay commits on a new base.</li>
+<li><strong>Unit vs integration test?</strong> Single unit vs interactions between components.</li>
+<li><strong>Process vs thread?</strong> Separate execution process/address space vs concurrent execution within shared process.</li>
+<li><strong>Concurrency vs parallelism?</strong> Overlapping task progress vs simultaneous execution.</li>
+<li><strong>Docker vs virtual machine?</strong> OS-level containers sharing a kernel vs guest OS virtualisation.</li>
+<li><strong>What happens when you enter a URL?</strong> DNS, connect/secure, HTTP, server response, browser render.</li>
+</ol>
+<h2 id="29-how-to-tackle-a-live-coding-interview">29. How to tackle a live coding interview</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="29" type="button">Mark complete</button>
+<p><strong>Repeatable script:</strong> Clarify input/output and constraints → give a small example → describe brute force → calculate Big O → improve with a known pattern → code clearly → test normal/edge cases → explain complexity and tradeoffs.</p>
+<p><strong>Typical tasks to practise:</strong> reverse a string; palindrome; character frequency; remove duplicates; two-sum; valid parentheses; merge sorted arrays; binary search; first non-repeating character; longest substring without duplicates; BFS; detect linked-list cycle; group anagrams; SQL JOIN and GROUP BY; build a small REST endpoint; fix a broken asynchronous function.</p>
+<p><strong>Worked example — valid parentheses:</strong></p>
+<pre><code class="language-python">def valid_parentheses(text):
+    pairs = {')': '(', ']': '[', '}': '{'}
+    stack = []
+    for ch in text:
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in pairs:
+            if not stack or stack.pop() != pairs[ch]:
+                return False
+    return not stack
+
+print(valid_parentheses('([])')) # True
+print(valid_parentheses('([)]')) # False
+</code></pre>
+<p><strong>Complexity:</strong> O(n) time; O(n) worst-case extra space. <strong>Boundary cases:</strong> empty string (valid here), a starting closing bracket, unexpected characters (currently ignored; specify whether allowed).</p>
+<p><strong>Interview behaviour:</strong> Say what you're thinking, own uncertainty, ask clarifying questions and admit when a solution is O(n²). Do not claim proficiency beyond what you can demonstrate.</p>
+<h2 id="30-behavioural-interviews-cv-claims-and-a-portfolio-project">30. Behavioural interviews, CV claims, and a portfolio project</h2><button aria-label="Mark this chapter as complete" class="lesson-done" data-lesson="30" type="button">Mark complete</button>
+<p>Use <strong>STAR</strong> for examples: <strong>Situation</strong> (context), <strong>Task</strong> (responsibility), <strong>Action</strong> (your specific work), <strong>Result</strong> (outcome/lesson). Prepare stories about: fixing a bug, learning something rapidly, collaborating, handling disagreement, taking feedback, missing a deadline, improving user experience, and managing uncertainty.</p>
+<p><strong>Example answer — bug:</strong> “In a video analysis prototype, some recordings had unreliable landmark detection (Situation). I needed to reduce misleading output (Task). I introduced quality checks and declined to present confident feedback when the recording was unsuitable (Action). The tool became clearer about when analysis was trustworthy, and I learnt to distinguish a technically completed feature from a validated one (Result).” Use only results you can substantiate.</p>
+<p><strong>On your CV:</strong> Say “SQL” or “React” as a skill only if you can independently demonstrate basic queries or components and explain your work. “Familiar with SQL” is a legitimate intermediate step. A small documented, tested, deployed project speaks more strongly than a long buzzword list.</p>
+<h3 id="capstone-project-job-application-tracker">Capstone project — Job Application Tracker</h3>
+<p>Build a small full-stack app you can show an interviewer:</p>
+<ul>
+<li><strong>Frontend:</strong> HTML/CSS/JavaScript or React; accessible form, sortable application table, filtering.</li>
+<li><strong>Backend:</strong> Python FastAPI (or Node/Express); REST endpoints: <code>GET /applications</code>, <code>POST /applications</code>, <code>PATCH /applications/{id}</code>, <code>DELETE /applications/{id}</code>.</li>
+<li><strong>Database:</strong> PostgreSQL/SQLite table with <code>id</code>, <code>company</code>, <code>role</code>,  record statuses, dates, and notes.</li>
+<li><strong>Validation:</strong> required fields, permitted statuses, dates; return sensible HTTP codes.</li>
+<li><strong>Security:</strong> safe DB parameters, do not commit secrets, access control if there are multiple users.</li>
+<li><strong>Testing:</strong> unit tests for validation and API integration tests; test invalid status, nonexistent ID and empty result.</li>
+<li><strong>Delivery:</strong> Git commits, README with setup and design tradeoffs, CI test workflow, demo/screenshots, deployment if feasible.</li>
+<li><strong>Stretch:</strong> search, pagination, login, Docker, caching, dashboard, accessibility audit.</li>
+</ul>
+<p><strong>Architecture:</strong> browser → HTTP API → validation/business service → database; tests and CI check code before release.</p>
+<p><strong>Questions to answer about your own project:</strong> What is the user problem? Why this stack? Show the request and DB row. What went wrong? How did you debug it? What would you change with 10,000 users? What are security risks? What tests prove it works?</p>
+<hr/>
+<h1 id="part-vii-assess-yourself-do-this-without-reading-the-answers">PART VII — ASSESS YOURSELF (DO THIS WITHOUT READING THE ANSWERS)</h1>
+<h2 id="31-final-assessment-40-multiple-choice-questions">31. Final assessment: 40 multiple-choice questions</h2>
+<p>Choose one answer per question, then select <strong>Grade my answers</strong>. Your choices are saved on this device where your browser permits local storage.</p>
+<div id="quiz-root"></div>
+<h2 id="32-code-reading-predict-the-output-before-running">32. Code reading: predict the output BEFORE running</h2>
+<p><strong>C1 — Python references</strong></p>
+<pre><code class="language-python">a = [1, 2]
+b = a
+b.append(3)
+print(a)
+</code></pre>
+<p><strong>C2 — Python loop</strong></p>
+<pre><code class="language-python">total = 0
+for n in [1, 2, 3, 4]:
+    if n % 2 == 0:
+        total += n
+print(total)
+</code></pre>
+<p><strong>C3 — JavaScript closure</strong></p>
+<pre><code class="language-javascript">function outer() {
+  let x = 1;
+  return () =&gt; ++x;
+}
+const fn = outer();
+console.log(fn(), fn());
+</code></pre>
+<p><strong>C4 — SQL aggregation:</strong> Given orders totals 20, 30 and 50 for customer 1, and 5 for customer 2, what does <code>SELECT customer_id, SUM(total) FROM orders GROUP BY customer_id HAVING SUM(total) &gt;= 60</code> return?</p>
+<p><strong>C5 — Python complexity:</strong> Why is the function below O(n²) time for an n-element list?</p>
+<pre><code class="language-python">def count_pairs(nums):
+    total = 0
+    for a in nums:
+        for b in nums:
+            total += 1
+    return total
+</code></pre>
+<h2 id="33-practical-challenges-write-actual-code">33. Practical challenges (write actual code)</h2>
+<p><strong>Level 1:</strong></p>
+<ul>
+<li><strong>P1:</strong> Write <code>is_palindrome(s)</code> ignoring case and spaces. Test <code>"Never odd or even"</code> → True; <code>"hello"</code> → False.</li>
+<li><strong>P2:</strong> Write <code>word_counts(sentence)</code> returning word frequencies; explain its expected time complexity.</li>
+<li><strong>P3:</strong> Write SQL to select all users whose email ends in <code>@example.com</code>, ordered by name.</li>
+<li><strong>P4:</strong> Write SQL joining customers with their order totals and include customers with zero orders.</li>
+</ul>
+<p><strong>Level 2:</strong></p>
+<ul>
+<li><strong>P5:</strong> Implement binary search on a sorted list and handle “not found.”</li>
+<li><strong>P6:</strong> Implement valid-parentheses for <code>()[]{}</code> using a stack.</li>
+<li><strong>P7:</strong> Build accessible HTML form with name and email, a CSS mobile layout, and JS to prevent submission of empty name.</li>
+<li><strong>P8:</strong> Build a backend endpoint <code>GET /tasks/{id}</code> returning 200 with JSON when found and 404 when absent; test both cases.</li>
+</ul>
+<p><strong>Level 3:</strong></p>
+<ul>
+<li><strong>P9:</strong> SQL: for each customer, return total spend and only customers with spend over 100; explain <code>JOIN</code>, <code>GROUP BY</code>, <code>HAVING</code> and what happens to customers with no orders.</li>
+<li><strong>P10:</strong> Debug a fetch function that assumes a 404 rejects automatically; fix it and show a helpful error state.</li>
+<li><strong>P11:</strong> Sketch a file-upload system: validation, storage, asynchronous processing, status polling, authorisation and safe failures.</li>
+<li><strong>P12:</strong> Design a job tracker, state its database schema, endpoints, indexes, test cases and deployment steps.</li>
+</ul>
+<h2 id="34-behavioural-mock-interview">34. Behavioural mock interview</h2>
+<p>Prepare 60–90-second spoken STAR responses to these:</p>
+<ul>
+<li><strong>B1:</strong> “Tell me about yourself” (present → evidence/project → why this role).</li>
+<li><strong>B2:</strong> “Explain a difficult bug you solved.”</li>
+<li><strong>B3:</strong> “What do you do when you don't know a technology?”</li>
+<li><strong>B4:</strong> “Describe a time you took feedback and changed something.”</li>
+<li><strong>B5:</strong> “What was a project limitation? What would you do differently?”</li>
+<li><strong>B6:</strong> “Why should we hire you as a junior when you lack professional experience?”</li>
+</ul>
+<p><strong>Good answer characteristics:</strong> concrete, truthful, first-person actions, measurable if evidence exists, and a lesson relevant to the team. Never invent metrics.</p>
+<hr/>
+<details class="answer-key"><summary>Reveal full answer key and worked solutions (after completing the quiz)</summary>
+<h2 id="35-multiple-choice-answer-key-and-explanations">35. Multiple-choice answer key and explanations</h2>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Answer</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>CPU executes instructions.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>RAM is typically volatile.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>Process = running program.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+<td>Python lists are mutable.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>Return provides a result/exits function.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A</td>
+<td>Recursion needs stopping condition.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>Encapsulation offers a safe boundary.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td>Sets represent unique values.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>D</td>
+<td>Hash tables offer expected O(1) lookups.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>Queue = first-in first-out.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>A</td>
+<td>Standard binary search uses sorted/orderable space.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>n × n = n² operations.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>B</td>
+<td>BFS uses a FIFO queue.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td>Primary key uniquely identifies a row.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C</td>
+<td>HAVING filters aggregate groups.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>B</td>
+<td>LEFT JOIN keeps every left row.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>C</td>
+<td>SQL NULL uses <code>IS NULL</code>.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>A</td>
+<td>Indexes cost space/write overhead.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>C</td>
+<td>Atomicity = all or nothing.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>B</td>
+<td>MongoDB is a document database.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>A</td>
+<td>DNS resolves names to network records.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>B</td>
+<td>HTTPS uses TLS.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>A</td>
+<td>HTTP 201 is Created.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>D</td>
+<td>HTTP 403 is Forbidden.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>B</td>
+<td>CORS is browser-origin access mechanism.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>A</td>
+<td>HTML structures meaningful content.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>A</td>
+<td>CSS Grid handles rows and columns.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>B</td>
+<td>const forbids rebinding but not object mutation.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>A</td>
+<td>Check response.ok/status on fetch responses.</td>
+</tr>
+<tr>
+<td>30</td>
+<td>B</td>
+<td>Props are parent-provided inputs.</td>
+</tr>
+<tr>
+<td>31</td>
+<td>A</td>
+<td>Authentication = identity.</td>
+</tr>
+<tr>
+<td>32</td>
+<td>B</td>
+<td>Parameterisation separates data from query syntax.</td>
+</tr>
+<tr>
+<td>33</td>
+<td>A</td>
+<td>CSRF uses victims' authenticated browser context.</td>
+</tr>
+<tr>
+<td>34</td>
+<td>B</td>
+<td>Git tracks version history.</td>
+</tr>
+<tr>
+<td>35</td>
+<td>B</td>
+<td>Fetch updates remote-tracking data only.</td>
+</tr>
+<tr>
+<td>36</td>
+<td>B</td>
+<td>Integration tests check connected components.</td>
+</tr>
+<tr>
+<td>37</td>
+<td>A</td>
+<td>Parallelism = simultaneous work.</td>
+</tr>
+<tr>
+<td>38</td>
+<td>B</td>
+<td>Containers typically share the host kernel.</td>
+</tr>
+<tr>
+<td>39</td>
+<td>A</td>
+<td>Reverse proxies front application servers.</td>
+</tr>
+<tr>
+<td>40</td>
+<td>B</td>
+<td>Requirements come before architecture choices.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="36-code-reading-solutions">36. Code-reading solutions</h2>
+<ul>
+<li><strong>C1:</strong> <code>[1, 2, 3]</code>: <code>a</code> and <code>b</code> reference the same mutable list.</li>
+<li><strong>C2:</strong> <code>6</code>: adds 2 + 4.</li>
+<li><strong>C3:</strong> <code>2 3</code>: one closure preserves and increments <code>x</code> across calls.</li>
+<li><strong>C4:</strong> One row for customer 1, total 100; customer 2 is filtered out by <code>HAVING</code>.</li>
+<li><strong>C5:</strong> Inner loop runs n times for each of n outer iterations, so n² increments; O(1) auxiliary memory.</li>
+</ul>
+<h2 id="37-worked-solutions-to-practical-challenges">37. Worked solutions to practical challenges</h2>
+<p><strong>P1:</strong></p>
+<pre><code class="language-python">def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if not c.isspace())
+    return cleaned == cleaned[::-1]
+</code></pre>
+<p>For punctuation-insensitive comparison, change filter to <code>c.isalnum()</code>.</p>
+<p><strong>P2:</strong></p>
+<pre><code class="language-python">def word_counts(sentence):
+    counts = {}
+    for word in sentence.lower().split():
+        counts[word] = counts.get(word, 0) + 1
+    return counts
+</code></pre>
+<p>Expected O(n) in number of words under standard expected hash-map assumptions; basic splitting does not strip punctuation.</p>
+<p><strong>P3:</strong> <code>SELECT * FROM users WHERE email LIKE '%@example.com' ORDER BY name;</code> SQL string matching/case sensitivity differs by DB and collation.</p>
+<p><strong>P4:</strong></p>
+<pre><code class="language-sql">SELECT c.id, c.name, COALESCE(SUM(o.total), 0) AS spent
+FROM customers c
+LEFT JOIN orders o ON o.customer_id = c.id
+GROUP BY c.id, c.name;
+</code></pre>
+<p><strong>P5:</strong> Use the <code>binary_search()</code> implementation in Chapter 8; test empty array, repeated numbers, beginning/end and missing target.</p>
+<p><strong>P6:</strong> Use the stack solution in Chapter 29; specify whether non-bracket characters are allowed.</p>
+<p><strong>P7:</strong> Use HTML <code>&lt;label for&gt;</code>, <code>&lt;input required&gt;</code> and CSS media query in Chapter 15, then JS <code>submit</code> listener with <code>.trim()</code> and <code>event.preventDefault()</code> for missing name. Also validate inputs on server.</p>
+<p><strong>P8:</strong> Use the FastAPI <code>get_product()</code> pattern from Chapter 18, swapping <code>products</code> for <code>tasks</code>. Test with <code>TestClient</code>: valid id → 200, unknown id → 404.</p>
+<p><strong>P9:</strong></p>
+<pre><code class="language-sql">SELECT c.id, c.name, SUM(o.total) AS spent
+FROM customers c
+JOIN orders o ON c.id = o.customer_id
+GROUP BY c.id, c.name
+HAVING SUM(o.total) &gt; 100;
+</code></pre>
+<p><code>JOIN</code> here is inner, so customers without orders do not appear. Use <code>LEFT JOIN</code> and <code>COALESCE</code> to include them, though an over-100 threshold still filters out zero totals.</p>
+<p><strong>P10:</strong> Check <code>if (!response.ok) throw new Error(...)</code>, and wrap <code>await fetch</code> in <code>try/catch</code> to show error state without leaking server details. See Chapter 16.</p>
+<p><strong>P11:</strong> Example: authenticated request → verify owner, file type/size/content and quota → store private object → enqueue job → worker scans/parses/processes → update job status → client polls authorised status endpoint → signed controlled download. Handle duplicate submissions, expiration, malware screening where applicable, retries and failures.</p>
+<p><strong>P12:</strong> Start with the capstone spec in Chapter 30. Bonus: explain why you'd start with a relational DB and one backend service instead of microservices.</p>
+<h2 id="38-mark-yourself-fairly">38. Mark yourself fairly</h2>
+<p><strong>40-question knowledge score:</strong> 0–19 = revisit fundamentals, 20–29 = foundations developing, 30–35 = good recognition, 36–40 = strong recall. <strong>But recognition is not proficiency.</strong> To call yourself interview-ready, you should ALSO complete at least 8/12 practical tasks without copying, explain at least one project end to end, and answer behavioural prompts with concrete examples. There is no single universal industry pass mark.</p>
+<p><strong>Skill tracker:</strong></p>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can explain a program, process, CPU, memory and OS.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can write Python functions and handle errors.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can demonstrate OOP and name sensible data structures.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can reason about time and space complexity.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can write joins, aggregates, CRUD SQL and explain transactions.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can explain requests, HTTP, DNS and APIs.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can build semantic HTML, responsive CSS and asynchronous JavaScript.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can explain React component state and props.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can build a basic backend and persist data.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can describe secure authentication and object-level access checks.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can use Git branches, commits and pull requests.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can write tests and debug failures methodically.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can explain Docker, deployment and monitoring at a basic level.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can design and demo one small project clearly.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can solve small coding challenges aloud under time pressure.</li>
+</ul>
+<hr/>
+<h1 id="reference-official-resources-to-deepen-any-topic">REFERENCE — official resources to deepen any topic</h1>
+<ul>
+<li><strong>MDN web curriculum:</strong> <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core</a></li>
+<li><strong>Python official tutorial:</strong> <a href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial/</a></li>
+<li><strong>PostgreSQL tutorial:</strong> <a href="https://www.postgresql.org/docs/current/tutorial.html">https://www.postgresql.org/docs/current/tutorial.html</a></li>
+<li><strong>JavaScript MDN:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide</a></li>
+<li><strong>TypeScript handbook:</strong> <a href="https://www.typescriptlang.org/docs/handbook/intro.html">https://www.typescriptlang.org/docs/handbook/intro.html</a></li>
+<li><strong>React learn:</strong> <a href="https://react.dev/learn">https://react.dev/learn</a></li>
+<li><strong>Git book:</strong> <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+<li><strong>OWASP Top 10 (2025):</strong> <a href="https://top10.owasp.org/2025/">https://top10.owasp.org/2025/</a></li>
+<li><strong>Docker getting started:</strong> <a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></li>
+<li><strong>FastAPI tutorial:</strong> <a href="https://fastapi.tiangolo.com/tutorial/">https://fastapi.tiangolo.com/tutorial/</a></li>
+<li><strong>Microsoft interview tips:</strong> <a href="https://careers.microsoft.com/v2/global/en/hiring-tips/interview-tips">https://careers.microsoft.com/v2/global/en/hiring-tips/interview-tips</a></li>
+</ul>
+<p><strong>The real standard:</strong> Can you explain the term in simple words, show a working example, name a limitation, and apply it? If yes, you understand it. If not, go back to the chapter and practise it.</p>
+</details></main><footer>Prepared as a revisitable study guide. Verify version-specific framework details with official documentation.</footer></div></div>
+<script src="script.js"></script>
+</body></html>
